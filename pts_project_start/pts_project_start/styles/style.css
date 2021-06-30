@@ -1,0 +1,144 @@
+/* Setup basics CSS */
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  height: 400vh;
+}
+a {
+  text-decoration: underline;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button {
+  cursor: pointer;
+}
+input,
+textarea,
+button {
+  outline: none;
+  box-shadow: none;
+  font-family: "Lato", sans-serif;
+}
+/* Your style start from here */
+.header{
+  height: 100vh;
+  background-image: url(../img/xadap.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.nav__bg{
+  background-color: #eee;
+  z-index: 8;
+  transition: transform 0.25s linear;
+}
+.nav__bg{
+  op: 1.5rem;
+    right: 1.5rem;
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    border-radius: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+.nav{
+  padding-top: 3.5rem;
+
+}
+.nav-menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-link{
+  display: block;
+  padding: 0 4rem;
+  font-size: 13px;
+  color: #4d4959;
+  text-decoration: none;
+  font-weight: 700;
+}
+.dot{
+  position: relative;
+}
+.dot::after{
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  background-color: #4d4959;
+  width: 3px;
+  height: 3px;
+  transform: translate(50%,-50%);
+}
+@media only screen and (max-width:705px){
+  .nav-menu{
+    display: block ;
+  }
+  .nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightgrey;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+  }
+  .btn__collapse{
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    border-radius: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    background-color: #64c29e;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .inp__collapse{
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    border-radius: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    background-color: #64c29e;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+  }
+  .inp__collapse:checked + .nav{
+    transform: translateX(0);
+  }
+}
